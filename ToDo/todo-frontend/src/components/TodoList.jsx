@@ -14,6 +14,7 @@ const TodoList = ({ todos, onUpdateTodo, onDeleteTodo, isLoading }) => {
     return <div className="empty">No todos yet. Add one above!</div>;
   }
 
+
   return (
     <div className="todo-list">
       {todos.map((todo) => (
