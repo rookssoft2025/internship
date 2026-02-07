@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/api';
+// Use environment variable or fallback to production URL
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://social-media-backend-production-8924.up.railway.app/api';
 
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
@@ -38,3 +39,4 @@ axiosInstance.interceptors.response.use(
 );
 
 export default axiosInstance;
+export { API_BASE_URL };

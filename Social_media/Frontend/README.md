@@ -23,7 +23,31 @@ A modern React frontend for the social media application with authentication, us
 ## Prerequisites
 
 - Node.js 18+ and npm
-- Backend API running on `http://localhost:8080`
+- Backend API (deployed or running locally)
+
+## Backend Configuration
+
+This frontend is configured to work with the deployed backend at:
+**https://social-media-backend-production-8924.up.railway.app**
+
+### Using the Deployed Backend (Default)
+
+The application is pre-configured to use the production backend. No additional setup needed!
+
+### Switching to Local Backend
+
+If you want to use a local backend instead:
+
+1. **Create/Update `.env` file:**
+   ```bash
+   VITE_API_BASE_URL=http://localhost:8081/api
+   ```
+
+2. **Make sure your local backend is running on port 8081**
+
+3. **Restart the development server** (if running)
+
+The `.env.example` file shows all available configuration options.
 
 ## Installation
 
@@ -119,7 +143,11 @@ Frontend/
 
 ## API Integration
 
-The frontend communicates with the backend API at `http://localhost:8080/api`. To change this, update the `API_BASE_URL` in `src/api/axios.js`.
+The frontend is configured to work with the deployed backend or a local backend via environment variables.
+
+### Current Configuration
+- **Production Backend**: https://social-media-backend-production-8924.up.railway.app/api
+- **Configuration File**: `.env` (create from `.env.example`)
 
 ### Authentication Flow
 1. User logs in or signs up
@@ -134,18 +162,66 @@ The frontend communicates with the backend API at `http://localhost:8080/api`. T
 - File size validation (max 10MB)
 - Automatic cleanup on cancellation
 
+## Testing the Backend Connection
+
+### Quick Test in Browser Console
+
+Once the app is running, open the browser console and run:
+
+```javascript
+fetch('https://social-media-backend-production-8924.up.railway.app/api/auth/signup', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    name: 'Test User', 
+    email: 'test@example.com', 
+    password: 'test123' 
+  })
+})
+.then(r => r.json())
+.then(console.log)
+.catch(console.error);
+```
+
+### Expected Response
+You should see either:
+- ✅ Success: User object with `id`, `name`, `email`
+- ⚠️ Error: "Email already exists" (if test user was already created)
+
+### Testing Workflow
+1. **Start the frontend**: `npm run dev`
+2. **Open**: http://localhost:5173
+3. **Try Signup**: Create a new account
+4. **Try Login**: Login with your credentials
+5. **Create a Post**: Upload an image and text
+6. **View Profile**: Check your profile and edit it
+
 ## Troubleshooting
 
+### Backend Connection Issues
+- **Check the deployed backend URL** is accessible
+- **Verify CORS is enabled** on the backend for your frontend domain
+- Check browser console for specific error messages
+
 ### CORS Issues
-If you encounter CORS errors, ensure your backend has CORS enabled for `http://localhost:5173`.
+If you encounter CORS errors:
+- Backend must allow requests from `http://localhost:5173` (dev) or your deployed frontend domain
+- Spring Boot backend should have proper CORS configuration in `SecurityConfig.java`
 
 ### API Connection Failed
-- Verify backend is running on `http://localhost:8080`
+- **Production**: Check if Railway backend is running and accessible
+- **Local**: Verify backend is running on `http://localhost:8081`
 - Check network tab in browser DevTools for API responses
-- Ensure MongoDB is running
+- Ensure MongoDB is properly configured
 
 ### Images Not Loading
-- Check that the backend `uploads/` directory exists
+- Check that the backend `uploads/` directory exists and has proper permissions
 - Verify file paths in the API responses
 - Check browser console for 404 errors
+- Ensure backend is serving static files correctly
+
+### Authentication Issues
+- Clear localStorage: `localStorage.clear()` in browser console
+- Check token is being sent in request headers
+- Verify JWT secret matches between backend configuration
 

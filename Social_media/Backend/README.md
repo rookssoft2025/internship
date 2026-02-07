@@ -14,13 +14,20 @@ A minimal Spring Boot REST API for a social media platform with user authenticat
 
 ## Prerequisites
 
-- Java 21+ (LTS recommended)
+- Java 17+
 - Maven 3.9+
-- MongoDB 4.4+ (running on `localhost:27017`)
+- MongoDB Atlas account (or local MongoDB 4.4+ on `localhost:27017`)
 
 ## Setup
 
-1. **Install MongoDB**
+1. **MongoDB Atlas Setup**
+   - Create a free cluster at https://www.mongodb.com/cloud/atlas
+   - Create a database user with username and password
+   - Whitelist your IP address (or use 0.0.0.0/0 for development)
+   - Get your connection string from "Connect" → "Connect your application"
+   - Update `application.properties` with your connection string
+
+   **OR use local MongoDB:**
    ```bash
    # Download from https://www.mongodb.com/try/download/community
    # Or use Docker:
@@ -37,19 +44,29 @@ A minimal Spring Boot REST API for a social media platform with user authenticat
    mvn spring-boot:run
    ```
 
-Server starts at: `http://localhost:8080`
+Server starts at: `http://localhost:8081`
 
 ## Configuration
 
 `src/main/resources/application.properties`:
 ```properties
-spring.data.mongodb.uri=mongodb://localhost:27017/social_db
+# MongoDB Atlas (Cloud)
+spring.data.mongodb.uri=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority
+
+# OR Local MongoDB
+# spring.data.mongodb.uri=mongodb://localhost:27017/social_db
+
 jwt.secret=your-secret-key-minimum-256-bits-for-HS256
 jwt.expiration=86400000
 spring.servlet.multipart.max-file-size=10MB
 spring.servlet.multipart.max-request-size=10MB
 file.upload-dir=uploads
 ```
+
+**Current Configuration:**
+- MongoDB Atlas: `mongodb+srv://jeswinrooks_db_user:rooks@cluster2.qla5vms.mongodb.net/social_db`
+- Database: `social_db`
+- Upload Directory: `uploads/`
 
 ## API Endpoints
 
@@ -213,21 +230,21 @@ Authorization: Bearer <token>
 
 ### Signup
 ```bash
-curl -X POST http://localhost:8080/api/auth/signup \
+curl -X POST http://localhost:8081/api/auth/signup \
   -H "Content-Type: application/json" \
   -d '{"name":"John Doe","email":"john@example.com","password":"password123"}'
 ```
 
 ### Login
 ```bash
-curl -X POST http://localhost:8080/api/auth/login \
+curl -X POST http://localhost:8081/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email":"john@example.com","password":"password123"}'
 ```
 
 ### Create Post with Image
 ```bash
-curl -X POST http://localhost:8080/api/posts \
+curl -X POST http://localhost:8081/api/posts \
   -H "Authorization: Bearer YOUR_TOKEN_HERE" \
   -F "contentText=Amazing sunset!" \
   -F "image=@/path/to/image.jpg"
@@ -235,7 +252,7 @@ curl -X POST http://localhost:8080/api/posts \
 
 ### Update Profile with Picture
 ```bash
-curl -X PUT http://localhost:8080/api/users/me \
+curl -X PUT http://localhost:8081/api/users/me \
   -H "Authorization: Bearer YOUR_TOKEN_HERE" \
   -F "bio=Software developer" \
   -F "profilePicture=@/path/to/profile.jpg"
@@ -243,7 +260,7 @@ curl -X PUT http://localhost:8080/api/users/me \
 
 ### Get Feed
 ```bash
-curl -X GET http://localhost:8080/api/posts \
+curl -X GET http://localhost:8081/api/posts \
   -H "Authorization: Bearer YOUR_TOKEN_HERE"
 ```
 

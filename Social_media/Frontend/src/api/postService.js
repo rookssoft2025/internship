@@ -1,4 +1,4 @@
-import axiosInstance from './axios';
+import axiosInstance, { API_BASE_URL } from './axios';
 
 const postService = {
   // Get all posts (feed)
@@ -26,7 +26,7 @@ const postService = {
   // Get post image URL
   getPostImageUrl: (fileName) => {
     if (!fileName) return null;
-    return `http://localhost:8080/api/posts/images/${fileName}`;
+    return `${API_BASE_URL}/posts/images/${fileName}`;
   },
 };
 
