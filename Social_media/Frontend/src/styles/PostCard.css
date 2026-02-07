@@ -1,0 +1,170 @@
+.post-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.post-author {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.post-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #667eea;
+}
+
+.post-avatar-placeholder {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.post-author-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.post-time {
+  font-size: 13px;
+  color: #666;
+}
+
+.post-delete-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.post-delete-btn:hover {
+  background: #f0f2f5;
+}
+
+.post-content {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.post-image {
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.post-image img {
+  width: 100%;
+  display: block;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+.delete-confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.delete-confirm-content {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.delete-confirm-content h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.delete-confirm-content p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.delete-confirm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.cancel-btn,
+.confirm-delete-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background: #f0f2f5;
+  color: #333;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: #e4e6eb;
+}
+
+.confirm-delete-btn {
+  background: #f44336;
+  color: white;
+}
+
+.confirm-delete-btn:hover:not(:disabled) {
+  background: #d32f2f;
+  transform: translateY(-2px);
+}
+
+.cancel-btn:disabled,
+.confirm-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
