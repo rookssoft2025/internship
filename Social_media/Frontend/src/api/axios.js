@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// Use environment variable or fallback to production URL
+
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://social-media-backend-production-8924.up.railway.app/api';
 
 const axiosInstance = axios.create({
@@ -28,10 +28,17 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
+   
     if (error.response?.status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      window.location.href = '/login';
+      const token = localStorage.getItem('token');
+      const isAuthEndpoint = error.config?.url?.includes('/auth/');
+      
+      if (token && !isAuthEndpoint) {
+      
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        window.location.href = '/login';
+      }
     }
     return Promise.reject(error);
   }

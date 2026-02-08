@@ -30,7 +30,15 @@ const Login = () => {
       await login(formData);
       navigate('/');
     } catch (err) {
-      setError(err.response?.data?.error || 'Login failed. Please try again.');
+      let errorMsg = 'Login failed. Please try again.';
+      if (err.response && err.response.data && err.response.data.error) {
+        errorMsg = err.response.data.error;
+      } else if (err.message) {
+        errorMsg = err.message;
+      }
+      setError(errorMsg);
+      setTimeout(() => setError(''), 3000);
+      console.error('Login error:', err);
     } finally {
       setLoading(false);
     }
