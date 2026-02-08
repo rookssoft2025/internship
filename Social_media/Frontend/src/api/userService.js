@@ -1,4 +1,4 @@
-import axiosInstance from './axios';
+import axiosInstance, { API_BASE_URL } from './axios';
 
 const userService = {
   // Get current user profile
@@ -24,7 +24,7 @@ const userService = {
   // Get profile picture URL
   getProfilePictureUrl: (fileName) => {
     if (!fileName) return null;
-    return `http://localhost:8080/api/users/profile-pictures/${fileName}`;
+    return `${API_BASE_URL}/users/profile-pictures/${fileName}`;
   },
 };
 
