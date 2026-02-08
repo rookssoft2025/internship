@@ -1,7 +1,7 @@
 import axiosInstance, { API_BASE_URL } from './axios';
 
 const postService = {
-  // Get all posts (feed)
+  // Get all posts 
   getAllPosts: async () => {
     const response = await axiosInstance.get('/posts');
     return response.data;

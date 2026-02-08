@@ -1,8 +1,8 @@
 .post-card {
-  background: white;
+  background: var(--color-bg-white);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--color-shadow);
   transition: box-shadow 0.3s ease;
 }
 
@@ -28,15 +28,15 @@
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #667eea;
+  border: 2px solid var(--color-primary);
 }
 
 .post-avatar-placeholder {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-bg-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,13 +47,13 @@
 .post-author-info h3 {
   font-size: 16px;
   font-weight: 600;
-  color: #333;
+  color: var(--color-text-dark);
   margin-bottom: 4px;
 }
 
 .post-time {
   font-size: 13px;
-  color: #666;
+  color: var(--color-text-medium);
 }
 
 .post-delete-btn {
@@ -67,11 +67,11 @@
 }
 
 .post-delete-btn:hover {
-  background: #f0f2f5;
+  background: var(--color-bg-light);
 }
 
 .post-content {
-  color: #333;
+  color: var(--color-text-dark);
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 12px;
@@ -107,7 +107,7 @@
 }
 
 .delete-confirm-content {
-  background: white;
+  background: var(--color-bg-white);
   padding: 24px;
   border-radius: 12px;
   max-width: 400px;
@@ -118,11 +118,11 @@
 .delete-confirm-content h3 {
   font-size: 20px;
   margin-bottom: 12px;
-  color: #333;
+  color: var(--color-text-dark);
 }
 
 .delete-confirm-content p {
-  color: #666;
+  color: var(--color-text-medium);
   margin-bottom: 20px;
   font-size: 15px;
 }
@@ -145,8 +145,8 @@
 }
 
 .cancel-btn {
-  background: #f0f2f5;
-  color: #333;
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
 }
 
 .cancel-btn:hover:not(:disabled) {

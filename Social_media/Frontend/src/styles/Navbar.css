@@ -1,6 +1,6 @@
 .navbar {
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: var(--color-bg-white);
+  box-shadow: 0 2px 4px var(--color-shadow);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -18,13 +18,13 @@
 .navbar-logo {
   font-size: 24px;
   font-weight: 700;
-  color: #667eea;
+  color: var(--color-primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .navbar-logo:hover {
-  color: #764ba2;
+  color: var(--color-primary-dark);
 }
 
 .navbar-right {
@@ -38,14 +38,14 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: #333;
+  color: var(--color-text-dark);
   padding: 8px 12px;
   border-radius: 8px;
   transition: background 0.3s ease;
 }
 
 .navbar-profile:hover {
-  background: #f0f2f5;
+  background: var(--color-bg-light);
 }
 
 .navbar-avatar {
@@ -53,15 +53,15 @@
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #667eea;
+  border: 2px solid var(--color-primary);
 }
 
 .navbar-avatar-placeholder {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-bg-white);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -9,6 +9,7 @@ const CreatePost = ({ onPostCreated }) => {
   const [imagePreview, setImagePreview] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  
 
   const { user } = useAuth();
 
@@ -25,6 +26,7 @@ const CreatePost = ({ onPostCreated }) => {
       setError('');
     }
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +47,7 @@ const CreatePost = ({ onPostCreated }) => {
       }
 
       const response = await postService.createPost(formData);
-      
+
       // Clear form
       setContentText('');
       setImage(null);

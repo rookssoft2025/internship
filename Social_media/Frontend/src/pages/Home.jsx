@@ -9,7 +9,7 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-
+  
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -18,7 +18,7 @@ const Home = () => {
     try {
       setLoading(true);
       const data = await postService.getAllPosts();
-      setPosts(data);
+      setPosts(data.posts || []);
       setError('');
     } catch (err) {
       setError('Failed to load posts');
@@ -64,6 +64,7 @@ const Home = () => {
                 key={post.id}
                 post={post}
                 onPostDeleted={handlePostDeleted}
+              
               />
             ))}
           </div>
