@@ -1,0 +1,126 @@
+.create-post {
+  background: var(--color-bg-white);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px var(--color-shadow);
+}
+
+.create-post h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--color-text-dark);
+}
+
+.post-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.post-textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.image-preview {
+  position: relative;
+  margin-top: 12px;
+}
+
+.image-preview img {
+  width: 100%;
+  border-radius: 8px;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.remove-image {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.remove-image:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  gap: 12px;
+}
+
+.image-upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--color-bg-light);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.image-upload-label:hover {
+  background: #e4e6eb;
+}
+
+.image-input {
+  display: none;
+}
+
+.post-button {
+  padding: 10px 24px;
+  background: var(--color-error);
+  color: var(--color-bg-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.post-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.post-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .post-actions {
+    flex-direction: column;
+  }
+
+  .image-upload-label,
+  .post-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

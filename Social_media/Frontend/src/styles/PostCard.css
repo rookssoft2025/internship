@@ -1,0 +1,170 @@
+.post-card {
+  background: var(--color-bg-white);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px var(--color-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.post-author {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.post-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary);
+}
+
+.post-avatar-placeholder {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.post-author-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: 4px;
+}
+
+.post-time {
+  font-size: 13px;
+  color: var(--color-text-medium);
+}
+
+.post-delete-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.post-delete-btn:hover {
+  background: var(--color-bg-light);
+}
+
+.post-content {
+  color: var(--color-text-dark);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.post-image {
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.post-image img {
+  width: 100%;
+  display: block;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+.delete-confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.delete-confirm-content {
+  background: var(--color-bg-white);
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.delete-confirm-content h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--color-text-dark);
+}
+
+.delete-confirm-content p {
+  color: var(--color-text-medium);
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.delete-confirm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.cancel-btn,
+.confirm-delete-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: #e4e6eb;
+}
+
+.confirm-delete-btn {
+  background: #f44336;
+  color: white;
+}
+
+.confirm-delete-btn:hover:not(:disabled) {
+  background: #d32f2f;
+  transform: translateY(-2px);
+}
+
+.cancel-btn:disabled,
+.confirm-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
