@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import '../styles/Auth.css';
 
 const Signup = () => {
@@ -10,11 +11,14 @@ const Signup = () => {
     password: '',
     confirmPassword: '',
   });
+   const navigate = useNavigate();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const { signup, login } = useAuth();
-  const navigate = useNavigate();
+  const { signup } = useAuth();
+  
 
   const handleChange = (e) => {
     setFormData({
@@ -44,9 +48,8 @@ const Signup = () => {
     try {
       const { name, email, password } = formData;
       await signup({ name, email, password });
-      // Auto login after signup
-      await login({ email, password });
       navigate('/');
+
     } catch (err) {
       setError(err.response?.data?.error || 'Signup failed. Please try again.');
     } finally {
@@ -59,7 +62,6 @@ const Signup = () => {
       <div className="auth-card">
         <h1 className="auth-title">Create Account</h1>
         <p className="auth-subtitle">Sign up to get started</p>
-
         {error && <div className="error-message">{error}</div>}
 
         <form onSubmit={handleSubmit} className="auth-form">
@@ -91,28 +93,44 @@ const Signup = () => {
 
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              placeholder="Enter your password"
-              required
-            />
+            <div className="password-input-wrapper">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Enter your password"
+                required
+              />
+              <span 
+                className="password-toggle-icon" 
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
           </div>
 
           <div className="form-group">
             <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              placeholder="Confirm your password"
-              required
-            />
+            <div className="password-input-wrapper">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                placeholder="Confirm your password"
+                required
+              />
+              <span 
+                className="password-toggle-icon" 
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              >
+                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
           </div>
 
           <button type="submit" className="auth-button" disabled={loading}>

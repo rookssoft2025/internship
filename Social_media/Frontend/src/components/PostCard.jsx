@@ -44,8 +44,12 @@ const PostCard = ({ post, onPostDeleted }) => {
    
   };
 
-  const profilePicUrl = post.userProfilePicture
-    ? userService.getProfilePictureUrl(post.userProfilePicture)
+
+  const displayName = isOwner ? user.name : post.userName;
+  const displayProfilePic = isOwner ? user.profilePicture : post.userProfilePicture;
+
+  const profilePicUrl = displayProfilePic
+    ? userService.getProfilePictureUrl(displayProfilePic)
     : null;
 
   const postImageUrl = post.imageFileName
@@ -59,16 +63,16 @@ const PostCard = ({ post, onPostDeleted }) => {
           {profilePicUrl ? (
             <img
               src={profilePicUrl}
-              alt={post.userName}
+              alt={displayName}
               className="post-avatar"
             />
           ) : (
             <div className="post-avatar-placeholder">
-              {post.userName?.charAt(0).toUpperCase()}
+              {displayName?.charAt(0).toUpperCase()}
             </div>
           )}
           <div className="post-author-info">
-            <h3>{post.userName}</h3>
+            <h3>{displayName}</h3>
             <span className="post-time">{formatDate(post.createdAt)}</span>
           </div>
         </div>

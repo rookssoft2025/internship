@@ -8,6 +8,7 @@ const Profile = () => {
   const { user, updateUser } = useAuth();
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [name, setName] = useState(user?.name || '');
   const [bio, setBio] = useState(user?.bio || '');
   const [profilePicture, setProfilePicture] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -15,13 +16,14 @@ const Profile = () => {
   const [success, setSuccess] = useState('');
 
   useEffect(() => {
+    setName(user?.name || '');
     setBio(user?.bio || '');
   }, [user]);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Validate file size (10MB max)
+
       if (file.size > 10 * 1024 * 1024) {
         setError('File size must be less than 10MB');
         return;
@@ -40,6 +42,7 @@ const Profile = () => {
 
     try {
       const formData = new FormData();
+      formData.append('name', name);
       formData.append('bio', bio);
       if (profilePicture) {
         formData.append('profilePicture', profilePicture);
@@ -60,6 +63,7 @@ const Profile = () => {
 
   const handleCancel = () => {
     setEditing(false);
+    setName(user?.name || '');
     setBio(user?.bio || '');
     setProfilePicture(null);
     setPreviewUrl(null);
@@ -133,6 +137,18 @@ const Profile = () => {
             </>
           ) : (
             <form onSubmit={handleSubmit} className="profile-form">
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+
               <div className="form-group">
                 <label htmlFor="bio">Bio</label>
                 <textarea
