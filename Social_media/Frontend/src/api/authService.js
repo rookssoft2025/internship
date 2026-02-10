@@ -4,6 +4,10 @@ const authService = {
   // Signup
   signup: async (userData) => {
     const response = await axiosInstance.post('/auth/signup', userData);
+    if (response.data.token) {
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+    }
     return response.data;
   },
 
