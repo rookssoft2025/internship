@@ -1,0 +1,122 @@
+.sidebar-overlay {
+  display: none;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100%;
+  background: var(--color-bg-secondary);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: transform var(--transition-normal);
+}
+
+.sidebar__header {
+  padding: var(--space-md);
+}
+
+.sidebar__new-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  transition: background var(--transition-fast);
+}
+
+.sidebar__new-btn:hover {
+  background: var(--color-bg-hover);
+}
+
+.sidebar__nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  transition: background var(--transition-fast);
+  position: relative;
+}
+
+.sidebar__item:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.sidebar__item--active {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+.sidebar__item-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar__delete-btn {
+  opacity: 0;
+  color: var(--color-text-muted);
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebar__item:hover .sidebar__delete-btn {
+  opacity: 1;
+}
+
+.sidebar__delete-btn:hover {
+  color: var(--color-danger);
+}
+
+.sidebar__footer {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.sidebar__footer-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    transform: translateX(-100%);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+}
