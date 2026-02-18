@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27dc1486-b819-400e-994d-14a2fbfb5c21" name="Changes" comment="Dependencies added">
-      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/rooks/social_media/backend/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/rooks/social_media/backend/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/26858907-7d3e-4af1-8d5d-5031747c0997.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/26858907-7d3e-4af1-8d5d-5031747c0997/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/rooks/social_media/backend/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/rooks/social_media/backend/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/api/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/api/authService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/context/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/pages/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/pages/Signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/pages/Signup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/styles/Auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/styles/Auth.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +118,7 @@
       <workItem from="1770375045664" duration="1849000" />
       <workItem from="1770435593490" duration="144000" />
       <workItem from="1770437748641" duration="841000" />
+      <workItem from="1770637888738" duration="593000" />
     </task>
     <task id="LOCAL-00001" summary="Server port changed">
       <option name="closed" value="true" />
