@@ -13,7 +13,7 @@ const iconMap = {
   sales: <FiShoppingBag />,
 };
 
-const Navbar = ({ appName = 'App Name', navLinks = [], userName = 'SA' }) => {
+const Navbar = ({ appName = 'Hospital Management', navLinks = [], userName = 'SA' }) => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.left}>
