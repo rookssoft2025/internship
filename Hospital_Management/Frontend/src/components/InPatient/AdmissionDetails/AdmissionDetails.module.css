@@ -1,0 +1,113 @@
+.section {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  min-width: 100px;
+}
+
+.field input {
+  padding: 7px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 12px;
+  outline: none;
+  background: #fafafa;
+  width: 130px;
+}
+
+.field input:focus {
+  border-color: #4caf50;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modeLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #444;
+  cursor: pointer;
+}
+
+.checkboxItem input {
+  width: 15px;
+  height: 15px;
+  accent-color: #4caf50;
+}
+
+.doctorField {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.doctorField label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+.doctorField select {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 12px;
+  outline: none;
+  background: #fafafa;
+  width: 100%;
+}
+
+.doctorField select:focus {
+  border-color: #4caf50;
+}

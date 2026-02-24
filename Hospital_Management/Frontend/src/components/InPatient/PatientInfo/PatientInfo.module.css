@@ -1,0 +1,61 @@
+.section {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+  flex: 1;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px 20px;
+  align-items: start;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 7px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 12px;
+  outline: none;
+  background: #fafafa;
+  font-family: inherit;
+  resize: none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #4caf50;
+}
+
+.addressField {
+  grid-row: span 2;
+}
+
+.spacer {
+  display: block;
+}

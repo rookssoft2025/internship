@@ -1,0 +1,56 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e8f5e9;
+  border-radius: 14px;
+  padding: 18px 20px;
+  min-width: 160px;
+  flex: 1;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.sub {
+  font-size: 11px;
+  color: #888;
+}
+
+.value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+  margin-top: 4px;
+}
+
+.textValue {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.iconCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+}
