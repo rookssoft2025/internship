@@ -1,0 +1,57 @@
+.section {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #444;
+  cursor: pointer;
+}
+
+.checkItem input {
+  width: 16px;
+  height: 16px;
+  accent-color: #1a1a2e;
+}
+
+.numberField {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #444;
+}
+
+.numberField input {
+  width: 50px;
+  padding: 4px 6px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 12px;
+  outline: none;
+  text-align: center;
+}
+
+.numberField input:focus {
+  border-color: #4caf50;
+}

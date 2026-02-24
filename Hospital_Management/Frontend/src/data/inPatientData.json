@@ -1,0 +1,32 @@
+{
+  "stats": [
+    { "id": 1, "label": "Active In-Patients", "value": 9, "color": "#e74c3c", "bgColor": "#e8f5e9" },
+    { "id": 2, "label": "New Admissions", "sub": "Today", "value": 10, "color": "#f39c12", "bgColor": "#e8f5e9" },
+    { "id": 3, "label": "Discharges", "sub": "Today", "value": 20, "color": "#27ae60", "bgColor": "#e8f5e9" },
+    { "id": 4, "label": "Upcoming Discharges", "sub": "Next 7 Days", "value": 5, "color": "#3498db", "bgColor": "#e8f5e9" }
+  ],
+  "doctors": [
+    "Dr. John Doe",
+    "Dr. Jane Smith",
+    "Dr. Robert Brown",
+    "Dr. Emily Davis",
+    "Dr. Michael Wilson"
+  ],
+  "medicines": [
+    "Paracetamol 500mg",
+    "Amoxicillin 250mg",
+    "Ibuprofen 400mg",
+    "Metformin 500mg",
+    "Atorvastatin 10mg",
+    "Omeprazole 20mg",
+    "Amlodipine 5mg",
+    "Losartan 50mg"
+  ],
+  "navLinks": [
+    { "label": "Dashboard", "icon": "dashboard", "path": "/dashboard" },
+    { "label": "Patient Registration", "icon": "registration", "path": "/patient-registration" },
+    { "label": "In Patient", "icon": "inpatient", "path": "/in-patient" },
+    { "label": "Follow Up", "icon": "followup", "path": "/follow-up" },
+    { "label": "Sales & Courier", "icon": "sales", "path": "/sales-courier" }
+  ]
+}

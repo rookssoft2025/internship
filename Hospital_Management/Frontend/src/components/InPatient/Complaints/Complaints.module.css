@@ -1,0 +1,68 @@
+.section {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+.textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 12px;
+  outline: none;
+  background: #fafafa;
+  resize: none;
+  font-family: inherit;
+}
+
+.textarea:focus {
+  border-color: #4caf50;
+}
+
+.conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  min-width: 40px;
+}
+
+.condInput {
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 12px;
+  outline: none;
+  background: #fafafa;
+  width: 90px;
+}
+
+.condInput:focus {
+  border-color: #4caf50;
+}
