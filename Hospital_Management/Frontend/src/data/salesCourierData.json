@@ -1,0 +1,34 @@
+{
+  "stats": [
+    { "id": 1, "label": "Total Prescriptions", "sub": "Today", "value": 9, "color": "#e74c3c", "bgColor": "#e8f5e9" },
+    { "id": 2, "label": "Dispensed", "sub": "Today", "value": 20, "color": "#27ae60", "bgColor": "#e8f5e9" },
+    { "id": 3, "label": "Most Prescribed Medicine", "value": "Ashwagandha Tabs", "color": "#f39c12", "bgColor": "#e8f5e9", "isText": true },
+    { "id": 4, "label": "Medicines Dispensed Value", "value": 5, "color": "#3498db", "bgColor": "#e8f5e9" }
+  ],
+  "navLinks": [
+    { "label": "Dashboard", "icon": "dashboard", "path": "/dashboard" },
+    { "label": "Patient Registration", "icon": "registration", "path": "/patient-registration" },
+    { "label": "In Patient", "icon": "inpatient", "path": "/in-patient" },
+    { "label": "Follow Up", "icon": "followup", "path": "/follow-up" },
+    { "label": "Sales & Courier", "icon": "sales", "path": "/sales-courier" }
+  ],
+  "statusOptions": ["Delivered", "Shipped", "Packed", "All"],
+  "couriers": [
+    { "id": 1, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Packed" },
+    { "id": 2, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Shipped" },
+    { "id": 3, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Shipped" },
+    { "id": 4, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Delivered" },
+    { "id": 5, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Packed" },
+    { "id": 6, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Delivered" },
+    { "id": 7, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Shipped" },
+    { "id": 8, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Shipped" },
+    { "id": 9, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Packed" },
+    { "id": 10, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Shipped" },
+    { "id": 11, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Delivered" },
+    { "id": 12, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Shipped" },
+    { "id": 13, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Packed" },
+    { "id": 14, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Delivered" },
+    { "id": 15, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Shipped" },
+    { "id": 16, "name": "John Doe", "prescription": "#1234", "trackingId": "12345 6/890", "contactNo": "12345 6/890", "billNo": "1234", "date": "12-12-2025", "status": "Delivered" }
+  ]
+}

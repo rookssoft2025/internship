@@ -1,0 +1,16 @@
+.header {
+  margin-bottom: 20px;
+}
+
+.hello {
+  font-size: 14px;
+  color: #5a9e6f;
+  font-weight: 500;
+}
+
+.welcome {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin: 2px 0 0 0;
+}
