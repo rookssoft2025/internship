@@ -10,7 +10,6 @@ const App = () => {
         <Route path="/" element={<Navigate to="/in-patient" replace />} />
         <Route path="/in-patient" element={<InPatient />} />
         <Route path="/sales-courier" element={<SalesCourier />} />
-        {/* Placeholder routes for other nav items */}
         <Route path="/dashboard" element={<InPatient />} />
         <Route path="/patient-registration" element={<InPatient />} />
         <Route path="/follow-up" element={<InPatient />} />
